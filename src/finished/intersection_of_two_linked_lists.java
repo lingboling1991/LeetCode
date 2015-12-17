@@ -1,0 +1,67 @@
+package finished;
+
+import java.util.HashMap;
+
+public class intersection_of_two_linked_lists {
+
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+
+        if (headA == null || headB == null) {
+            return null;
+        }
+
+        HashMap<ListNode, Integer> a = new HashMap<>();// 这里要设计好，因为p.next肯定不一样（因为不会成环），但p.val可能会一样，所以应当是ListNode作Key
+        ListNode p = headA;
+
+        while (p.next != null) {
+            a.put(p.next, p.val);
+            p = p.next;
+        }
+        a.put(p.next, p.val);
+
+        p = headB;
+
+        while (p.next != null) {
+            if (a.get(p.next) != null && a.get(p.next) == p.val) {// a.get(p.next) != null不能省略，否则会报NullPointer异常
+                return p;
+            }
+            p = p.next;
+        }
+        if (a.get(p.next) != null && a.get(p.next) == p.val) {
+            return p;
+        }
+
+        return null;
+    }
+
+    public static void main(String arg[]) {
+        intersection_of_two_linked_lists s = new intersection_of_two_linked_lists();
+
+        intersection_of_two_linked_lists.ListNode a = s.new ListNode(1);
+        intersection_of_two_linked_lists.ListNode b = s.new ListNode(2);
+        intersection_of_two_linked_lists.ListNode c = s.new ListNode(3);
+        intersection_of_two_linked_lists.ListNode d = s.new ListNode(4);
+        intersection_of_two_linked_lists.ListNode e = s.new ListNode(5);
+//         intersection_of_two_linked_lists.ListNode f = s.new ListNode(6);
+
+        a.next = null;
+        b.next = c;
+        c.next = d;
+        d.next = e;
+        e.next = null;
+
+        System.out.println(getIntersectionNode(a, b).val);
+
+    }
+
+    public class ListNode {
+
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+            next = null;
+        }
+    }
+}
