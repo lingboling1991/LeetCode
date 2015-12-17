@@ -1,32 +1,32 @@
 package FIN.rectangle_area;
 
 public class Solution {
-	public static int computeArea(int A, int B, int C, int D, int E, int F,
-			int G, int H) {
+    public static int computeArea(int A, int B, int C, int D, int E, int F,
+                                  int G, int H) {
 
-		int x1 = Math.abs(A - C);
-		int x2 = Math.abs(E - G);
-		int y1 = Math.abs(B - D);
-		int y2 = Math.abs(F - H);
+        int x1 = Math.abs(A - C);
+        int x2 = Math.abs(E - G);
+        int y1 = Math.abs(B - D);
+        int y2 = Math.abs(F - H);
 
-		int totalX = x1 * y1 + x2 * y2;
+        int totalX = x1 * y1 + x2 * y2;
 
-		int x3 = A >= E ? A : E;
-		int x4 = C <= G ? C : G;
-		int y3 = B >= F ? B : F;
-		int y4 = D <= H ? D : H;
+        int x3 = A >= E ? A : E;
+        int x4 = C <= G ? C : G;
+        int y3 = B >= F ? B : F;
+        int y4 = D <= H ? D : H;
 
-		int totalY = Math.abs(x3 - x4) * Math.abs(y3 - y4);
+        int totalY = Math.abs(x3 - x4) * Math.abs(y3 - y4);
 
-		if (x3 > x4 || y3 > y4) {// ÕâÀïÒª×¢Òâ£¬Èç¹ûÏà½»²¿·Ö²»´æÔÚ£¬¾Í²»ÒªÇ¿ĞĞÈ¥¼õ
-			return totalX;
-		} else {
-			return totalX - totalY;
+        if (x3 > x4 || y3 > y4) {// è¿™é‡Œè¦æ³¨æ„ï¼Œå¦‚æœç›¸äº¤éƒ¨åˆ†ä¸å­˜åœ¨ï¼Œå°±ä¸è¦å¼ºè¡Œå»å‡
+            return totalX;
+        } else {
+            return totalX - totalY;
 
-		}
-	}
+        }
+    }
 
-	public static void main(String arg[]) {
-		System.out.println(computeArea(-2, -2, 2, 2, 3, 3, 4, 4));
-	}
+    public static void main(String arg[]) {
+        System.out.println(computeArea(-2, -2, 2, 2, 3, 3, 4, 4));
+    }
 }

@@ -3,35 +3,35 @@ package FIN.contains_duplicate_ii;
 import java.util.HashMap;
 
 public class Solution {
-	public static boolean containsNearbyDuplicate(int[] nums, int k) {
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
 
-		if (nums.length == 0 || k == 0) {
-			return false;
-		}
+        if (nums.length == 0 || k == 0) {
+            return false;
+        }
 
-		HashMap<Integer, Integer> hm = new HashMap<>();
+        HashMap<Integer, Integer> hm = new HashMap<>();
 
-		for (int j = 0; j < nums.length; j++) {
-			if (!hm.containsKey(nums[j])) {
-				hm.put(nums[j], j);
-			} else {
-				int i = hm.get(nums[j]);
-				// Ö»ÒªÓÐÒ»×éÂú×ãnums[i]==nums[j]ÇÒj-i<=k¾Í¿ÉÒÔ
-				if (j - i <= k) {
-					return true;
-				} else {
-					hm.put(nums[j], j);//¸üÐÂnums[j]Î»ÖÃ£¬ÎªºóÃæµÄ±È½Ï×ö×¼±¸£¬ÒòÎªÇ°Ò»¸önums[j]ÒÑ¾­ÀëµÃÌ«Ô¶ÁË£¬ËùÒÔÕâÀïÒª»»
-				}
-			}
-		}
+        for (int j = 0; j < nums.length; j++) {
+            if (!hm.containsKey(nums[j])) {
+                hm.put(nums[j], j);
+            } else {
+                int i = hm.get(nums[j]);
+                // åªè¦æœ‰ä¸€ç»„æ»¡è¶³nums[i]==nums[j]ä¸”j-i<=kå°±å¯ä»¥
+                if (j - i <= k) {
+                    return true;
+                } else {
+                    hm.put(nums[j], j);//æ›´æ–°nums[j]ä½ç½®ï¼Œä¸ºåŽé¢çš„æ¯”è¾ƒåšå‡†å¤‡ï¼Œå› ä¸ºå‰ä¸€ä¸ªnums[j]å·²ç»ç¦»å¾—å¤ªè¿œäº†ï¼Œæ‰€ä»¥è¿™é‡Œè¦æ¢
+                }
+            }
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	public static void main(String args[]) {
-		int[] nums = { 1, 0, 1, 1 };
-		int k = 1;
-		boolean r = containsNearbyDuplicate(nums, k);
-		System.out.println(r);
-	}
+    public static void main(String args[]) {
+        int[] nums = {1, 0, 1, 1};
+        int k = 1;
+        boolean r = containsNearbyDuplicate(nums, k);
+        System.out.println(r);
+    }
 }

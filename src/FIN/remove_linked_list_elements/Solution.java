@@ -1,61 +1,62 @@
 package FIN.remove_linked_list_elements;
 
-public class Solution {//£¡£¡£¡»¹ÄÜ¸Ä½ø
-	public static ListNode removeElements(ListNode head, int val) {
+public class Solution {// çœ‹äº†tagsï¼ŒåŸæ¥æ˜¯2-pointersé—®é¢˜ï¼Œå°±æ˜¯ä¸€ä¸ªæŒ‡é’ˆå¾€å‰èµ°ï¼Œä¸€ä¸ªæŒ‡é’ˆåœ¨åè¾¹è®°ç€ï¼Œè¿™æ ·åªè¦éå†ä¸€éæ•°ç»„å°±å¯ä»¥
 
-		if (head == null) {
-			return null;
-		} else if (head.next == null) {
-			if (head.val == val) {
-				return null;
-			} else {
-				return head;
-			}
-		}
+    public static ListNode removeElements(ListNode head, int val) {
 
-		ListNode p = head;
-		ListNode n = head.next;
+        if (head == null) {
+            return null;
+        } else if (head.next == null) {
+            if (head.val == val) {
+                return null;
+            } else {
+                return head;
+            }
+        }
 
-		while (p.next != null) {//Ò»Ö±Ñ­»·µ½pÊÇ½áÎ²ÄÇ¸ö½Úµã
-			if (head.val == val) {
-				head = n;
-				p = head;
-			} else if (n.val == val) {
-				p.next = n.next;
-			} else {
-				p = n;
-			}
-			n = n.next;
-		}
+        ListNode p = head;
+        ListNode n = head.next;
 
-		if (p.val == val) {//ÕâÀïpÖ¸µÄÊÇ×îºóÒ»¸ö£¬Èç¹ûËûÒ²ÊÇval£¬ÄÇÃ´¾ÍÒªÉ¾µôËû
-			if (head == p) {
-				return null;
-			} else {
-				ListNode t = head;
-				while (t.next != p) {
-					t = t.next;
-				}
-				t.next = null;
-			}
-		}
+        while (p.next != null) {//ä¸€ç›´å¾ªç¯åˆ°pæ˜¯ç»“å°¾é‚£ä¸ªèŠ‚ç‚¹
+            if (head.val == val) {
+                head = n;
+                p = head;
+            } else if (n.val == val) {
+                p.next = n.next;
+            } else {
+                p = n;
+            }
+            n = n.next;
+        }
 
-		return head;
-	}
+        if (p.val == val) {//è¿™é‡ŒpæŒ‡çš„æ˜¯æœ€åä¸€ä¸ªï¼Œå¦‚æœä»–ä¹Ÿæ˜¯valï¼Œé‚£ä¹ˆå°±è¦åˆ æ‰ä»–
+            if (head == p) {
+                return null;
+            } else {
+                ListNode t = head;
+                while (t.next != p) {
+                    t = t.next;
+                }
+                t.next = null;
+            }
+        }
 
-	public static void main(String arg[]) {
-		ListNode a = new ListNode(1);
-		ListNode b = new ListNode(1);
-		// ListNode c = new ListNode(3);
-		// ListNode d = new ListNode(1);
-		// ListNode e = new ListNode(3);
+        return head;
+    }
 
-		a.next = b;
-		// b.next = c;
-		// c.next = d;
-		// d.next = e;
+    public static void main(String arg[]) {
+        ListNode a = new ListNode(1);
+        ListNode b = new ListNode(1);
+        // ListNode c = new ListNode(3);
+        // ListNode d = new ListNode(1);
+        // ListNode e = new ListNode(3);
 
-		ListNode next = removeElements(a, 1);
-		System.out.println(next.val);
-	}
+        a.next = b;
+        // b.next = c;
+        // c.next = d;
+        // d.next = e;
+
+        ListNode next = removeElements(a, 1);
+        System.out.println(next.val);
+    }
 }

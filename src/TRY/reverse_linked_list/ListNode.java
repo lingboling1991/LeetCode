@@ -1,26 +1,26 @@
 package TRY.reverse_linked_list;
 
 class ListNode {
-	int val;
-	ListNode next;
+    int val;
+    ListNode next;
 
-	public int getVal() {
-		return val;
-	}
+    ListNode(int x) {
+        val = x;
+    }
 
-	public void setVal(int val) {
-		this.val = val;
-	}
+    public int getVal() {
+        return val;
+    }
 
-	public ListNode getNext() {
-		return next;
-	}
+    public void setVal(int val) {
+        this.val = val;
+    }
 
-	public void setNext(ListNode next) {
-		this.next = next;
-	}
+    public ListNode getNext() {
+        return next;
+    }
 
-	ListNode(int x) {
-		val = x;
-	}
+    public void setNext(ListNode next) {
+        this.next = next;
+    }
 }

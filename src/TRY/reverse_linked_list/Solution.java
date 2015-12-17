@@ -1,48 +1,49 @@
 package TRY.reverse_linked_list;
 
-public class Solution {//Õâ¸öÌâ¿´ÁËHints£¬Ê¹ÓÃÁËµİ¹é£¬×¢Òâº¯Êı·µ»ØµÄÊÇ×ª¹ıÀ´µÄÁ´±íµÄÍ·
-	public static ListNode reverseList(ListNode head) {
+public class Solution {//è¿™ä¸ªé¢˜çœ‹äº†Hintsï¼Œä½¿ç”¨äº†é€’å½’ï¼Œæ³¨æ„å‡½æ•°è¿”å›çš„æ˜¯è½¬è¿‡æ¥çš„é“¾è¡¨çš„å¤´
 
-		if (head == null) {
-			return null;
-		}
+    public static ListNode reverseList(ListNode head) {
 
-		if (head.next == null) {
-			return head;
-		} else {
-			ListNode newHead = reverseList(head.next);
-			// ÕÒµ½newHeadµÄÎ²½Úµã£¬°ÑheadÌîµ½Î²½ÚµãµÄnextÉÏ
-			ListNode tmp = newHead;
-			while (tmp.next != null) {
-				tmp = tmp.next;
-			}
-			tmp.next=head;
-			head.next=null;//ÕâÀïĞèÒª°ÑĞÂÎ²µÄnextÖÃnull£¬²»È»µÄ»°£¬»á±ä³ÉĞÂÎ²Ö¸¾ÉÎ²£¬ËÀÑ­»·
-			return newHead;
-		}
-	}
+        if (head == null) {
+            return null;
+        }
 
-	public static void main(String args[]) {
-		ListNode a = new ListNode(1);
-		ListNode b = new ListNode(2);
-		ListNode c = new ListNode(3);
-		ListNode d = new ListNode(4);
-		ListNode e = new ListNode(5);
-		ListNode f = new ListNode(6);
+        if (head.next == null) {
+            return head;
+        } else {
+            ListNode newHead = reverseList(head.next);
+            // æ‰¾åˆ°newHeadçš„å°¾èŠ‚ç‚¹ï¼ŒæŠŠheadå¡«åˆ°å°¾èŠ‚ç‚¹çš„nextä¸Š
+            ListNode tmp = newHead;
+            while (tmp.next != null) {
+                tmp = tmp.next;
+            }
+            tmp.next = head;
+            head.next = null;//è¿™é‡Œéœ€è¦æŠŠæ–°å°¾çš„nextç½®nullï¼Œä¸ç„¶çš„è¯ï¼Œä¼šå˜æˆæ–°å°¾æŒ‡æ—§å°¾ï¼Œæ­»å¾ªç¯
+            return newHead;
+        }
+    }
 
-		a.setNext(b);
-		b.setNext(c);
-		c.setNext(d);
-		d.setNext(e);
-		e.setNext(f);
-		f.setNext(null);
+    public static void main(String args[]) {
+        ListNode a = new ListNode(1);
+        ListNode b = new ListNode(2);
+        ListNode c = new ListNode(3);
+        ListNode d = new ListNode(4);
+        ListNode e = new ListNode(5);
+        ListNode f = new ListNode(6);
 
-		ListNode res = reverseList(a);
-		System.out.println(res.val);
-		System.out.println(res.next.val);
-		System.out.println(res.next.next.val);
-		System.out.println(res.next.next.next.val);
-		System.out.println(res.next.next.next.next.val);
-		System.out.println(res.next.next.next.next.next.val);
-	}
+        a.setNext(b);
+        b.setNext(c);
+        c.setNext(d);
+        d.setNext(e);
+        e.setNext(f);
+        f.setNext(null);
+
+        ListNode res = reverseList(a);
+        System.out.println(res.val);
+        System.out.println(res.next.val);
+        System.out.println(res.next.next.val);
+        System.out.println(res.next.next.next.val);
+        System.out.println(res.next.next.next.next.val);
+        System.out.println(res.next.next.next.next.next.val);
+    }
 }

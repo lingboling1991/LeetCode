@@ -2,50 +2,50 @@ package NEW.excel_sheet_column_number;
 
 public class Solution {
 
-	// Excel Sheet Column Number
-	public static int titleToNumber(String s) {
+    // Excel Sheet Column Number
+    public static int titleToNumber(String s) {
 
-		char[] c = s.toCharArray();
-		int n = c.length;
-		int res = 0;
+        char[] c = s.toCharArray();
+        int n = c.length;
+        int res = 0;
 
-		for (int i = 0; i < c.length; i++) {
-			double x = (double) ((int) c[i] - 64);
-			double y = x * Math.pow(26, n - 1);
+        for (int i = 0; i < c.length; i++) {
+            double x = (double) ((int) c[i] - 64);
+            double y = x * Math.pow(26, n - 1);
 
-			res += (int) y;
-			n--;
-		}
+            res += (int) y;
+            n--;
+        }
 
-		return res;
-	}
+        return res;
+    }
 
-	// Excel Sheet Column Title
-	public static String convertToTitle(int n) {// res == a * 26^2 + b * 26^1 + c * 26^0£¬ÐÎÈç×óÊ½£¬È»ºóÈ¡Ä£µÃ×îµÍÎ»ÏµÊý£¬È»ºóÈ¥µô×îµÍÎ»£¬ÔÙÀ´Ò»±é
+    // Excel Sheet Column Title
+    public static String convertToTitle(int n) {// res == a * 26^2 + b * 26^1 + c * 26^0ï¼Œå½¢å¦‚å·¦å¼ï¼Œç„¶åŽå–æ¨¡å¾—æœ€ä½Žä½ç³»æ•°ï¼Œç„¶åŽåŽ»æŽ‰æœ€ä½Žä½ï¼Œå†æ¥ä¸€é
 
-		char[] x = new char[99];
+        char[] x = new char[99];
 
-		for (int j = 98; n >= 1; j--) {
-			int t = n % 26;
-			if (t == 0) {
-				x[j] = 'Z';
-				n -= 26;
-			} else {
-				x[j] = (char) (t + 64);
-			}
-			n = n / 26;
-		}
+        for (int j = 98; n >= 1; j--) {
+            int t = n % 26;
+            if (t == 0) {
+                x[j] = 'Z';
+                n -= 26;
+            } else {
+                x[j] = (char) (t + 64);
+            }
+            n = n / 26;
+        }
 
-		String y = new String(x);
+        String y = new String(x);
 
-		return y.trim();
-	}
+        return y.trim();
+    }
 
-	public static void main(String arg[]) {
-		// String s = "H";
-		// int res = titleToNumber(s);
-		// System.out.println(res);// A==65,Z==90
-		System.out.println(convertToTitle(28));
-	}
+    public static void main(String arg[]) {
+        // String s = "H";
+        // int res = titleToNumber(s);
+        // System.out.println(res);// A==65,Z==90
+        System.out.println(convertToTitle(28));
+    }
 
 }

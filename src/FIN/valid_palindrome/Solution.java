@@ -1,34 +1,34 @@
 package FIN.valid_palindrome;
 
 public class Solution {
-	public static boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String s) {
 
-		if (s.length() == 0) {
-			return true;
-		}
-		
-		s = s.toLowerCase();
-		s = s.replaceAll("\\W", "");
+        if (s.length() == 0) {
+            return true;
+        }
 
-		char[] a = s.toCharArray();
-		char[] b = new char[a.length];
+        s = s.toLowerCase();
+        s = s.replaceAll("\\W", "");
 
-		for (int i = 0; i < b.length; i++) {
-			b[i] = a[a.length - i - 1];
-		}
+        char[] a = s.toCharArray();
+        char[] b = new char[a.length];
 
-		String ss = new String(b);
+        for (int i = 0; i < b.length; i++) {
+            b[i] = a[a.length - i - 1];
+        }
 
-		if (s.equals(ss)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+        String ss = new String(b);
 
-	public static void main(String arg[]) {
+        if (s.equals(ss)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-		System.out.println(isPalindrome("race a car"));
+    public static void main(String arg[]) {
 
-	}
+        System.out.println(isPalindrome("race a car"));
+
+    }
 }

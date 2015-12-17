@@ -1,28 +1,28 @@
 package NEW.reverse_bits;
 
 public class Solution {
-	// you need treat n as an unsigned value
-	public static int reverseBits(int n) {
+    // you need treat n as an unsigned value
+    public static int reverseBits(int n) {
 
-		char[] r = new char[32];
-		for (int i = 0; i < 32; i++) {
-			r[i] = '0';
-		}
-		int j = 0;
-		
-		char[] x = Integer.toBinaryString(n).toCharArray();//int×ª¶ş½øÖÆString×ªchar[]£¬Õâ¸ö×ª»¯Íê³ÉÖ®ºó£¬nÇ°ÃæµÄÄÇĞ©0»á±»É¾µô
-		for (int i = x.length - 1; i >= 0; i--) {
-			r[j] = x[i];
-			j++;
-		}
+        char[] r = new char[32];
+        for (int i = 0; i < 32; i++) {
+            r[i] = '0';
+        }
+        int j = 0;
 
-		String y = new String(r);//char[]×ªString
-		return Integer.parseUnsignedInt(y, 2);//Ê®½øÖÆString×ª¶ş½øÖÆint
+        char[] x = Integer.toBinaryString(n).toCharArray();//intè½¬äºŒè¿›åˆ¶Stringè½¬char[]ï¼Œè¿™ä¸ªè½¬åŒ–å®Œæˆä¹‹åï¼Œnå‰é¢çš„é‚£äº›0ä¼šè¢«åˆ æ‰
+        for (int i = x.length - 1; i >= 0; i--) {
+            r[j] = x[i];
+            j++;
+        }
 
-	}
+        String y = new String(r);//char[]è½¬String
+        return Integer.parseUnsignedInt(y, 2);//åè¿›åˆ¶Stringè½¬äºŒè¿›åˆ¶int
 
-	public static void main(String arg[]) {
-		System.out.println(reverseBits(43261596));
-		System.out.println(Integer.toBinaryString(15065253));
-	}
+    }
+
+    public static void main(String arg[]) {
+        System.out.println(reverseBits(43261596));
+        System.out.println(Integer.toBinaryString(15065253));
+    }
 }

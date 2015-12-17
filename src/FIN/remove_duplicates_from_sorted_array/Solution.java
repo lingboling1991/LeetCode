@@ -1,27 +1,27 @@
 package FIN.remove_duplicates_from_sorted_array;
 
 public class Solution {
-	public static int removeDuplicates(int[] nums) {// 看了tags，原来是2-pointers问题，就是一个指针往前走，一个指针在后边记着，这样只要遍历一遍数组就可以
+    public static int removeDuplicates(int[] nums) {// 鐪嬩簡tags锛屽師鏉ユ槸2-pointers闂锛屽氨鏄竴涓寚閽堝線鍓嶈蛋锛屼竴涓寚閽堝湪鍚庤竟璁扮潃锛岃繖鏍峰彧瑕侀亶鍘嗕竴閬嶆暟缁勫氨鍙互
 
-		int res = 0;
+        int res = 0;
 
-		if (nums.length == 0) {
-			return 0;
-		}
+        if (nums.length == 0) {
+            return 0;
+        }
 
-		for (int i = 0, j = 1; j < nums.length; j++) {
-			if (nums[j] != nums[i]) {
-				nums[i + 1] = nums[j];
-				i++;
-			}
-			res = i;
-		}
+        for (int i = 0, j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i]) {
+                nums[i + 1] = nums[j];
+                i++;
+            }
+            res = i;
+        }
 
-		return res + 1;
-	}
+        return res + 1;
+    }
 
-	public static void main(String arg[]) {
-		int[] nums = { 1, 1, 2 };
-		System.out.println(removeDuplicates(nums));
-	}
+    public static void main(String arg[]) {
+        int[] nums = {1, 1, 2};
+        System.out.println(removeDuplicates(nums));
+    }
 }

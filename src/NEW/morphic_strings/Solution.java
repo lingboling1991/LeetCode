@@ -3,32 +3,32 @@ package NEW.morphic_strings;
 import java.util.HashMap;
 
 public class Solution {
-	public static boolean isIsomorphic(String s, String t) {
+    public static boolean isIsomorphic(String s, String t) {
 
-		if (s.length() == 0 || s == t)
-			return true;
-		
-		//ÕâÀïÒªÓÃHashMap£¬²»ÄÜÓÃÑ­»·µü´ú°¤¸ö±È¶Ô£¬Ñ­»·Ğ§ÂÊÌ«Âı
-		HashMap<Character, Character> hm = new HashMap<Character, Character>();
+        if (s.length() == 0 || s == t)
+            return true;
 
-		char[] sc = s.toCharArray();
-		char[] tc = t.toCharArray();
+        //è¿™é‡Œè¦ç”¨HashMapï¼Œä¸èƒ½ç”¨å¾ªç¯è¿­ä»£æŒ¨ä¸ªæ¯”å¯¹ï¼Œå¾ªç¯æ•ˆç‡å¤ªæ…¢
+        HashMap<Character, Character> hm = new HashMap<Character, Character>();
 
-		for (int i = 0; i < sc.length; i++) {
-			if (hm.get(sc[i]) == null) {
-				if (hm.containsValue(tc[i])) {
-					return false;
-				}
-				hm.put(sc[i], tc[i]);
-			} else if (hm.get(sc[i]) != tc[i]) {
-				return false;
-			}
-		}
-		return true;
-	}
+        char[] sc = s.toCharArray();
+        char[] tc = t.toCharArray();
 
-	public static void main(String args[]) {
-		boolean res = isIsomorphic("ab", "aa");
-		System.out.println(res);
-	}
+        for (int i = 0; i < sc.length; i++) {
+            if (hm.get(sc[i]) == null) {
+                if (hm.containsValue(tc[i])) {
+                    return false;
+                }
+                hm.put(sc[i], tc[i]);
+            } else if (hm.get(sc[i]) != tc[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String args[]) {
+        boolean res = isIsomorphic("ab", "aa");
+        System.out.println(res);
+    }
 }

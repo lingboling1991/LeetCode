@@ -5,60 +5,60 @@ import java.util.List;
 
 public class Solution {
 
-	public static List<List<Integer>> levelOrder(TreeNode root) {
+    public static List<List<Integer>> levelOrder(TreeNode root) {
 
-		ArrayList<TreeNode> levelNode = new ArrayList<>();
-		ArrayList<TreeNode> nextLevel = new ArrayList<>();
-		List<List<Integer>> res = new ArrayList<>();
+        ArrayList<TreeNode> levelNode = new ArrayList<>();
+        ArrayList<TreeNode> nextLevel = new ArrayList<>();
+        List<List<Integer>> res = new ArrayList<>();
 
-		if (root == null) {// ÊäÈëÎª¿Õ£¬ÄÇÃ´·µ»ØµÄÒ²ÊÇ¿Õ
-			return res;
-		}
+        if (root == null) {// è¾“å…¥ä¸ºç©ºï¼Œé‚£ä¹ˆè¿”å›çš„ä¹Ÿæ˜¯ç©º
+            return res;
+        }
 
-		if (root.left != null)// Ã¿´ÎÌí¼ÓÇ°¶¼ÒªÑéÖ¤£¬¿´ÓĞÃ»ÓĞÕâÑùÒ»¸öÖµ
-			nextLevel.add(root.left);
-		if (root.right != null)
-			nextLevel.add(root.right);
-		ArrayList<Integer> x = new ArrayList<>();
-		x.add(root.val);
-		res.add(x);// ÏÈ°ÑÊ÷µÄ¸ù½ÚµãÅª½øÈ¥£¬Ö®ºóÔÙ¿ªÊ¼Ñ­»·
+        if (root.left != null)// æ¯æ¬¡æ·»åŠ å‰éƒ½è¦éªŒè¯ï¼Œçœ‹æœ‰æ²¡æœ‰è¿™æ ·ä¸€ä¸ªå€¼
+            nextLevel.add(root.left);
+        if (root.right != null)
+            nextLevel.add(root.right);
+        ArrayList<Integer> x = new ArrayList<>();
+        x.add(root.val);
+        res.add(x);// å…ˆæŠŠæ ‘çš„æ ¹èŠ‚ç‚¹å¼„è¿›å»ï¼Œä¹‹åå†å¼€å§‹å¾ªç¯
 
-		while (!nextLevel.isEmpty()) {// ÏÂÒ»²ã»¹ÓĞ½Úµã£¬ÄÇ¾Í¼ÌĞø
-			while (!nextLevel.isEmpty()) {
-				levelNode.add(nextLevel.remove(0));
-			}
+        while (!nextLevel.isEmpty()) {// ä¸‹ä¸€å±‚è¿˜æœ‰èŠ‚ç‚¹ï¼Œé‚£å°±ç»§ç»­
+            while (!nextLevel.isEmpty()) {
+                levelNode.add(nextLevel.remove(0));
+            }
 
-			ArrayList<Integer> levelValue = new ArrayList<>();
+            ArrayList<Integer> levelValue = new ArrayList<>();
 
-			while (!levelNode.isEmpty()) {// °ÑÃ¿²ãµÄµã¶¼µ¯³öÀ´£¬ÖµĞ´µ½levelValueÀï£¬È»ºó°ÑËü×óÓÒ¶ù×Ó½Úµã·Åµ½nextLevelÀï
-				TreeNode p = levelNode.remove(0);
-				levelValue.add(p.val);
-				if (p.left != null)
-					nextLevel.add(p.left);
-				if (p.right != null)
-					nextLevel.add(p.right);
-			}
+            while (!levelNode.isEmpty()) {// æŠŠæ¯å±‚çš„ç‚¹éƒ½å¼¹å‡ºæ¥ï¼Œå€¼å†™åˆ°levelValueé‡Œï¼Œç„¶åæŠŠå®ƒå·¦å³å„¿å­èŠ‚ç‚¹æ”¾åˆ°nextLevelé‡Œ
+                TreeNode p = levelNode.remove(0);
+                levelValue.add(p.val);
+                if (p.left != null)
+                    nextLevel.add(p.left);
+                if (p.right != null)
+                    nextLevel.add(p.right);
+            }
 
-			res.add(levelValue);// ÕâÒ»²ãµÄÖµ·Åµ½½á¹ûÀï
-		}
-		return res;
-	}
+            res.add(levelValue);// è¿™ä¸€å±‚çš„å€¼æ”¾åˆ°ç»“æœé‡Œ
+        }
+        return res;
+    }
 
-	public static void main(String arg[]) {
-		TreeNode a = new TreeNode(1);
-		TreeNode b = new TreeNode(2);
-		TreeNode c = new TreeNode(3);
-		TreeNode d = new TreeNode(4);
-		TreeNode e = new TreeNode(5);
+    public static void main(String arg[]) {
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(3);
+        TreeNode d = new TreeNode(4);
+        TreeNode e = new TreeNode(5);
 
-		a.left = b;
-		a.right = c;
-		b.left = d;
-		b.right = e;
+        a.left = b;
+        a.right = c;
+        b.left = d;
+        b.right = e;
 
-		List<List<Integer>> f = levelOrder(a);
+        List<List<Integer>> f = levelOrder(a);
 
-		System.out.println(f.get(2));
-	}
+        System.out.println(f.get(2));
+    }
 
 }

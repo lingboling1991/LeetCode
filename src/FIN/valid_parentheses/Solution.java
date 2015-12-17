@@ -4,51 +4,51 @@ import java.util.ArrayList;
 
 public class Solution {
 
-	public static boolean isValid(String s) {
+    public static boolean isValid(String s) {
 
-		if (s.length() % 2 != 0) {
-			return false;
-		}
+        if (s.length() % 2 != 0) {
+            return false;
+        }
 
-		char[] c = new char[s.length()];
-		c = s.toCharArray();
+        char[] c = new char[s.length()];
+        c = s.toCharArray();
 
-		ArrayList<Character> l = new ArrayList<>();
-		for (int i = 0; i < c.length; i++) {
-			l.add(c[i]);
-		}
+        ArrayList<Character> l = new ArrayList<>();
+        for (int i = 0; i < c.length; i++) {
+            l.add(c[i]);
+        }
 
-		int len = c.length;
-		// l.sort(null);//ÕâÀïÊÇÒòÎªÌâ¸ÉÀïÖ¸³öÁË"(]" ºÍ "([)]"
-		// ÊÇ²»ºÏ¸ñµÄ£¬²»È»µÄ»°£¬ÓÃsort()º¯ÊıÏÈÅÅÒ»ÏÂĞò£¬»á¼òµ¥ºÜ¶à
-		for (int i = 0; i < len; i++) {
-			if (l.get(i) == '(' || l.get(i) == '{' || l.get(i) == '[') {
-				continue;
-			} else if (l.get(i) == ')' && i - 1 >= 0 && l.get(i - 1) == '(') {
-				l.remove(i);
-				l.remove(i - 1);
-				len -= 2;
-				i = -1;
-			} else if (l.get(i) == ']' && i - 1 >= 0 && l.get(i - 1) == '[') {
-				l.remove(i);
-				l.remove(i - 1);
-				len -= 2;
-				i = -1;
-			} else if (l.get(i) == '}' && i - 1 >= 0 && l.get(i - 1) == '{') {
-				l.remove(i);
-				l.remove(i - 1);
-				len -= 2;
-				i = -1;
-			}
-		}
-		if (l.isEmpty()) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+        int len = c.length;
+        // l.sort(null);//è¿™é‡Œæ˜¯å› ä¸ºé¢˜å¹²é‡ŒæŒ‡å‡ºäº†"(]" å’Œ "([)]"
+        // æ˜¯ä¸åˆæ ¼çš„ï¼Œä¸ç„¶çš„è¯ï¼Œç”¨sort()å‡½æ•°å…ˆæ’ä¸€ä¸‹åºï¼Œä¼šç®€å•å¾ˆå¤š
+        for (int i = 0; i < len; i++) {
+            if (l.get(i) == '(' || l.get(i) == '{' || l.get(i) == '[') {
+                continue;
+            } else if (l.get(i) == ')' && i - 1 >= 0 && l.get(i - 1) == '(') {
+                l.remove(i);
+                l.remove(i - 1);
+                len -= 2;
+                i = -1;
+            } else if (l.get(i) == ']' && i - 1 >= 0 && l.get(i - 1) == '[') {
+                l.remove(i);
+                l.remove(i - 1);
+                len -= 2;
+                i = -1;
+            } else if (l.get(i) == '}' && i - 1 >= 0 && l.get(i - 1) == '{') {
+                l.remove(i);
+                l.remove(i - 1);
+                len -= 2;
+                i = -1;
+            }
+        }
+        if (l.isEmpty()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
-	public static void main(String arg[]) {
-		System.out.println(isValid("{[}[{}{{({)){[}([]{)}({())[}[}"));
-	}
+    public static void main(String arg[]) {
+        System.out.println(isValid("{[}[{}{{({)){[}([]{)}({())[}[}"));
+    }
 }

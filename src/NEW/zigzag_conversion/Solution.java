@@ -1,9 +1,9 @@
 package NEW.zigzag_conversion;
 
 public class Solution {
-	public static String convert(String s, int numRows) {
-		/*	P  I  N		numRows==4
-		 * 	A LS IG
+    public static String convert(String s, int numRows) {
+        /*	P  I  N		numRows==4
+         * 	A LS IG
 		 * 	YA HR
 		 * 	P  I
 		 *	
@@ -14,38 +14,38 @@ public class Solution {
 		 *	A   N
 		 */
 
-		if (numRows == 1) {//ÕâÀïÊÇ¿¼µã£¬ËùÎ½numRows==1£¬¾ÍÊÇ²»×ö×ª»»£¬Òª¿¼ÂÇÖÜÈ«
-			return s;
-		}
+        if (numRows == 1) {//è¿™é‡Œæ˜¯è€ƒç‚¹ï¼Œæ‰€è°“numRows==1ï¼Œå°±æ˜¯ä¸åšè½¬æ¢ï¼Œè¦è€ƒè™‘å‘¨å…¨
+            return s;
+        }
 
-		int r = 2 * numRows - 2;
-		char[] c = s.toCharArray();
-		String res = "";
+        int r = 2 * numRows - 2;
+        char[] c = s.toCharArray();
+        String res = "";
 
-		int parts;
-		if (c.length % r == 0) {
-			parts = c.length / r;
-		} else {
-			parts = (c.length / r) + 1;
-		}
+        int parts;
+        if (c.length % r == 0) {
+            parts = c.length / r;
+        } else {
+            parts = (c.length / r) + 1;
+        }
 
-		for (int j = 0; j < numRows; j++) {// µÚjĞĞ
-			for (int i = 0; i < parts; i++) {// µÚi×é
-				if (j + i * r < c.length) {
-					res += c[j + i * r];
-					if (j != 0 && j != numRows - 1
-							&& (2 * i + 1) * r - (j + i * r) < c.length) {// ²»ÊÇµÚÒ»ĞĞ£¬Ò²²»ÊÇ×îºóÒ»ĞĞ£¬¾ÍÒª¼ÓÉÏĞ±×ÅµÄ×ÖÄ¸
-						res += c[(2 * i + 1) * r - (j + i * r)];
-					}
-				}
-			}
-		}
-		return res;
-	}
+        for (int j = 0; j < numRows; j++) {// ç¬¬jè¡Œ
+            for (int i = 0; i < parts; i++) {// ç¬¬iç»„
+                if (j + i * r < c.length) {
+                    res += c[j + i * r];
+                    if (j != 0 && j != numRows - 1
+                            && (2 * i + 1) * r - (j + i * r) < c.length) {// ä¸æ˜¯ç¬¬ä¸€è¡Œï¼Œä¹Ÿä¸æ˜¯æœ€åä¸€è¡Œï¼Œå°±è¦åŠ ä¸Šæ–œç€çš„å­—æ¯
+                        res += c[(2 * i + 1) * r - (j + i * r)];
+                    }
+                }
+            }
+        }
+        return res;
+    }
 
-	public static void main(String arg[]) {
-		String res = convert("PAYPALISHIRING", 5);
-		System.out.println(res);
-	}
+    public static void main(String arg[]) {
+        String res = convert("PAYPALISHIRING", 5);
+        System.out.println(res);
+    }
 
 }
