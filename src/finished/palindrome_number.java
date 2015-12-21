@@ -1,6 +1,6 @@
-package finished.palindrome_number;
+package finished;
 
-public class Solution {
+public class palindrome_number {
     public static boolean isPalindrome(int x) {
 
         if (x < 0) {

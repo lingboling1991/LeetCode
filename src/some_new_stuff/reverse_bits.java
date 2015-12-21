@@ -1,6 +1,6 @@
-package some_new_stuff.reverse_bits;
+package some_new_stuff;
 
-public class Solution {
+public class reverse_bits {
     // you need treat n as an unsigned value
     public static int reverseBits(int n) {
 

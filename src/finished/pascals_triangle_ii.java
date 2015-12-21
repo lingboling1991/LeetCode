@@ -1,9 +1,9 @@
-package finished.pascals_triangle_ii;
+package finished;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class pascals_triangle_ii {
 
     public static List<Integer> getRow(int rowIndex) {
         ArrayList<Integer> firstRow = new ArrayList<>();

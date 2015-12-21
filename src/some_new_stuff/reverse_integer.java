@@ -1,6 +1,6 @@
-package some_new_stuff.reverse_integer;
+package some_new_stuff;
 
-public class Solution {
+public class reverse_integer {
     public static int rrr(int x) {
         if (x == Integer.MIN_VALUE)
             return 0;

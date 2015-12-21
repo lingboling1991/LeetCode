@@ -1,6 +1,6 @@
-package try_again.house_robber;
+package try_again;
 
-public class Solution {
+public class house_robber {
 
     public static int biggest(int[] nums) {
         int res = 0;

@@ -1,9 +1,9 @@
-package finished.pascals_triangle;
+package finished;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class pascals_triangle {
     public static List<List<Integer>> generate(int numRows) {
 
         List<List<Integer>> res = new ArrayList<>();

@@ -1,6 +1,6 @@
-package some_new_stuff.number_of_1_bits;
+package some_new_stuff;
 
-public class Solution {
+public class number_of_1_bits {
     // you need to treat n as an unsigned value
     public static int hammingWeight(int n) {
 

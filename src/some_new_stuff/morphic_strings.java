@@ -1,8 +1,8 @@
-package some_new_stuff.morphic_strings;
+package some_new_stuff;
 
 import java.util.HashMap;
 
-public class Solution {
+public class morphic_strings {
     public static boolean isIsomorphic(String s, String t) {
 
         if (s.length() == 0 || s == t)

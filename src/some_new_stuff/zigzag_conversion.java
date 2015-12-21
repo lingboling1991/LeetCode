@@ -1,6 +1,6 @@
-package some_new_stuff.zigzag_conversion;
+package some_new_stuff;
 
-public class Solution {
+public class zigzag_conversion {
     public static String convert(String s, int numRows) {
         /*	P  I  N		numRows==4
          * 	A LS IG
