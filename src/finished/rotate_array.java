@@ -1,12 +1,12 @@
-package finished.rotate_array;
+package finished;
 
-public class Solution {
+public class rotate_array {
 
     public static void main(String arg[]) {
 
         int[] nums = {1};
-        Solution solution = new Solution();
-        solution.rotate(nums, 1);
+        rotate_array rotatearray = new rotate_array();
+        rotatearray.rotate(nums, 1);
         System.out.println(nums[0]);
     }
 

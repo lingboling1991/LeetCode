@@ -1,6 +1,6 @@
-package finished.power_of_two;
+package finished;
 
-public class Solution {
+public class power_of_two {
     public static boolean isPowerOfTwo(int n) {
 
         if (n <= 0) {

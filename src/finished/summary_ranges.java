@@ -1,9 +1,9 @@
-package finished.summary_ranges;
+package finished;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class summary_ranges {
     public static List<String> summaryRanges(int[] nums) {
 
         int p = 0;

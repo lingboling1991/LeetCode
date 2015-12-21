@@ -1,6 +1,6 @@
-package finished.remove_duplicates_from_sorted_array;
+package finished;
 
-public class Solution {
+public class remove_duplicates_from_sorted_array {
     public static int removeDuplicates(int[] nums) {// 看了tags，原来是2-pointers问题，就是一个指针往前走，一个指针在后边记着，这样只要遍历一遍数组就可以
 
         int res = 0;

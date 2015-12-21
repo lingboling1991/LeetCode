@@ -1,6 +1,6 @@
-package finished.rectangle_area;
+package finished;
 
-public class Solution {
+public class rectangle_area {
     public static int computeArea(int A, int B, int C, int D, int E, int F,
                                   int G, int H) {
 

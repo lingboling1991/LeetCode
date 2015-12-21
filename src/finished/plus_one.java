@@ -1,6 +1,6 @@
-package finished.plus_one;
+package finished;
 
-public class Solution {
+public class plus_one {
     public static int[] plusOne(int[] digits) {
 
         int[] res = new int[digits.length + 1];

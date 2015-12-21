@@ -1,8 +1,8 @@
-package finished.roman_to_integer;
+package finished;
 
 import java.util.HashMap;
 
-public class Solution {
+public class roman_to_integer {
 
     public static int romanToInt(String s) {
 

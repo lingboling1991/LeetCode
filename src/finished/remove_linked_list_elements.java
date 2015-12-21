@@ -1,6 +1,6 @@
-package finished.remove_linked_list_elements;
+package finished;
 
-public class Solution {// 看了tags，原来是2-pointers问题，就是一个指针往前走，一个指针在后边记着，这样只要遍历一遍数组就可以
+public class remove_linked_list_elements {// 看了tags，原来是2-pointers问题，就是一个指针往前走，一个指针在后边记着，这样只要遍历一遍数组就可以
 
     public static ListNode removeElements(ListNode head, int val) {
 
@@ -44,19 +44,14 @@ public class Solution {// 看了tags，原来是2-pointers问题，就是一个�
         return head;
     }
 
-    public static void main(String arg[]) {
-        ListNode a = new ListNode(1);
-        ListNode b = new ListNode(1);
-        // ListNode c = new ListNode(3);
-        // ListNode d = new ListNode(1);
-        // ListNode e = new ListNode(3);
 
-        a.next = b;
-        // b.next = c;
-        // c.next = d;
-        // d.next = e;
+    class ListNode {
 
-        ListNode next = removeElements(a, 1);
-        System.out.println(next.val);
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
     }
 }

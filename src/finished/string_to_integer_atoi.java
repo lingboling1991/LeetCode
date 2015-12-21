@@ -1,6 +1,6 @@
-package finished.string_to_integer_atoi;
+package finished;
 
-public class Solution {
+public class string_to_integer_atoi {
     public static int myAtoi(String str) {
 
         String s = str.trim();

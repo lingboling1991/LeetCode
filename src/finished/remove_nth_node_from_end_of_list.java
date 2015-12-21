@@ -1,8 +1,8 @@
-package finished.remove_nth_node_from_end_of_list;
+package finished;
 
 import java.util.ArrayList;
 
-public class Solution {
+public class remove_nth_node_from_end_of_list {
     public static ListNode removeNthFromEnd(ListNode head, int n) {
 
         if (head.next == null)
@@ -27,22 +27,12 @@ public class Solution {
         return head;
     }
 
-    public static void main(String arg[]) {
-        ListNode a = new ListNode(1);
-        ListNode b = new ListNode(2);
-        // ListNode c = new ListNode(3);
-        // ListNode d = new ListNode(4);
-        // ListNode e = new ListNode(5);
+    class ListNode {
+        int val;
+        ListNode next;
 
-        a.next = b;
-        // b.next = c;
-        // c.next = d;
-        // d.next = e;
-        b.next = null;
-
-        ListNode res = removeNthFromEnd(a, 2);
-
-        System.out.println(res.val);
-
+        ListNode(int x) {
+            val = x;
+        }
     }
 }
