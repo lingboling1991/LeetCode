@@ -21,13 +21,13 @@ public class convert_sorted_list_to_binary_search_tree {
         return inorderHelper(0, size - 1);
     }
 
-    public TreeNode inorderHelper(int start, int end) {
+    public TreeNode inorderHelper(int start, int end) {//每调用一次，就会new出一个新节点，node就会往后走一位
         if (start > end) {
             return null;
         }
 
         int mid = start + (end - start) / 2;
-        TreeNode left = inorderHelper(start, mid - 1);
+        TreeNode left = inorderHelper(start, mid - 1);// 链表是有序的，保证了后一个肯定比前一个大，因此中序遍历
 
         TreeNode treenode = new TreeNode(node.val);
         treenode.left = left;
@@ -58,5 +58,23 @@ public class convert_sorted_list_to_binary_search_tree {
         }
     }
 
+    public static void main(String[] args) {
 
+        convert_sorted_list_to_binary_search_tree t = new convert_sorted_list_to_binary_search_tree();
+
+        ListNode a = t.new ListNode(1);
+        ListNode b = t.new ListNode(2);
+        ListNode c = t.new ListNode(3);
+        ListNode d = t.new ListNode(4);
+        ListNode e = t.new ListNode(5);
+
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = e;
+        e.next = null;
+
+        t.sortedListToBST(a);
+        System.out.println("ddd");
+    }
 }
