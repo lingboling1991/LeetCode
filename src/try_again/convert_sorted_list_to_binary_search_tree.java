@@ -1,10 +1,13 @@
 package try_again;
 
+import util.ListNode;
+import util.TreeNode;
+
 public class convert_sorted_list_to_binary_search_tree {
 
-    private ListNode node;
+    public static ListNode node;
 
-    public TreeNode sortedListToBST(ListNode head) {
+    public static TreeNode sortedListToBST(ListNode head) {
         if (head == null) {
             return null;
         }
@@ -21,7 +24,7 @@ public class convert_sorted_list_to_binary_search_tree {
         return inorderHelper(0, size - 1);
     }
 
-    public TreeNode inorderHelper(int start, int end) {//每调用一次，就会new出一个新节点，node就会往后走一位
+    public static TreeNode inorderHelper(int start, int end) {//每调用一次，就会new出一个新节点，node就会往后走一位
         if (start > end) {
             return null;
         }
@@ -39,34 +42,13 @@ public class convert_sorted_list_to_binary_search_tree {
         return treenode;
     }
 
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public static void main(String[] args) {
 
-        convert_sorted_list_to_binary_search_tree t = new convert_sorted_list_to_binary_search_tree();
-
-        ListNode a = t.new ListNode(1);
-        ListNode b = t.new ListNode(2);
-        ListNode c = t.new ListNode(3);
-        ListNode d = t.new ListNode(4);
-        ListNode e = t.new ListNode(5);
+        ListNode a = new ListNode(1);
+        ListNode b = new ListNode(2);
+        ListNode c = new ListNode(3);
+        ListNode d = new ListNode(4);
+        ListNode e = new ListNode(5);
 
         a.next = b;
         b.next = c;
@@ -74,7 +56,7 @@ public class convert_sorted_list_to_binary_search_tree {
         d.next = e;
         e.next = null;
 
-        t.sortedListToBST(a);
+        sortedListToBST(a);
         System.out.println("ddd");
     }
 }

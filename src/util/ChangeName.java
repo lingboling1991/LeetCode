@@ -1,4 +1,4 @@
-package changeName;
+package util;
 
 import java.util.Scanner;
 

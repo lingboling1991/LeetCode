@@ -1,5 +1,7 @@
 package finished;
 
+import util.ListNode;
+
 public class remove_linked_list_elements {// 看了tags，原来是2-pointers问题，就是一个指针往前走，一个指针在后边记着，这样只要遍历一遍数组就可以
 
     public static ListNode removeElements(ListNode head, int val) {
@@ -42,16 +44,5 @@ public class remove_linked_list_elements {// 看了tags，原来是2-pointers问
         }
 
         return head;
-    }
-
-
-    class ListNode {
-
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 }

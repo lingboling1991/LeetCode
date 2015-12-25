@@ -1,5 +1,7 @@
 package finished;
 
+import util.TreeNode;
+
 public class invert_binary_tree {
 
     public static TreeNode invertTree(TreeNode root) {
@@ -18,16 +20,5 @@ public class invert_binary_tree {
             return root;
         }
 
-    }
-
-    class TreeNode {
-
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
     }
 }

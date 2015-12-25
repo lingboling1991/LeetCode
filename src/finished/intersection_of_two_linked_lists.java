@@ -1,5 +1,7 @@
 package finished;
 
+import util.ListNode;
+
 import java.util.HashMap;
 
 public class intersection_of_two_linked_lists {
@@ -35,13 +37,11 @@ public class intersection_of_two_linked_lists {
     }
 
     public static void main(String arg[]) {
-        intersection_of_two_linked_lists s = new intersection_of_two_linked_lists();
-
-        intersection_of_two_linked_lists.ListNode a = s.new ListNode(1);
-        intersection_of_two_linked_lists.ListNode b = s.new ListNode(2);
-        intersection_of_two_linked_lists.ListNode c = s.new ListNode(3);
-        intersection_of_two_linked_lists.ListNode d = s.new ListNode(4);
-        intersection_of_two_linked_lists.ListNode e = s.new ListNode(5);
+        ListNode a = new ListNode(1);
+        ListNode b = new ListNode(2);
+        ListNode c = new ListNode(3);
+        ListNode d = new ListNode(4);
+        ListNode e = new ListNode(5);
 //         intersection_of_two_linked_lists.ListNode f = s.new ListNode(6);
 
         a.next = null;
@@ -52,16 +52,5 @@ public class intersection_of_two_linked_lists {
 
         System.out.println(getIntersectionNode(a, b).val);
 
-    }
-
-    public class ListNode {
-
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
     }
 }

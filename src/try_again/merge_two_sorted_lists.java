@@ -1,6 +1,8 @@
-package try_again.merge_two_sorted_lists;
+package try_again;
 
-public class Solution {
+import util.ListNode;
+
+public class merge_two_sorted_lists {
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 

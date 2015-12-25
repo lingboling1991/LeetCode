@@ -1,5 +1,7 @@
 package finished;
 
+import util.TreeNode;
+
 /**
  * Created by Administrator on 2015/12/19.
  */
@@ -19,16 +21,6 @@ public class same_tree {
                 return false;
             else
                 return true;
-        }
-    }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
         }
     }
 }

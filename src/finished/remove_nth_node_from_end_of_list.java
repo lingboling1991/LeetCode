@@ -1,5 +1,7 @@
 package finished;
 
+import util.ListNode;
+
 import java.util.ArrayList;
 
 public class remove_nth_node_from_end_of_list {
@@ -25,14 +27,5 @@ public class remove_nth_node_from_end_of_list {
         }
 
         return head;
-    }
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 }

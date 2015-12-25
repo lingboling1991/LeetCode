@@ -1,5 +1,7 @@
 package finished;
 
+import util.ListNode;
+
 /**
  * Created by Administrator on 2015/12/17.
  */
@@ -31,15 +33,6 @@ public class swap_nodes_in_pairs {
                 tmp.next = l.next;
                 r = l.next;
             }
-        }
-    }
-
-    class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
         }
     }
 }

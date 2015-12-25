@@ -1,4 +1,4 @@
-package changeName;
+package util;
 
 import java.util.ArrayList;
 
@@ -71,23 +71,12 @@ public class lowest_common_ancestor_of_a_binary_search_tree {
         }
     }
 
-    public class TreeNode {
-        int val;
-        TreeNode left = null;
-        TreeNode right = null;
-
-        TreeNode(int x) {
-            val = x;
-        }
-    }
-
     public static void main(String[] args) {
-        lowest_common_ancestor_of_a_binary_search_tree x = new lowest_common_ancestor_of_a_binary_search_tree();
 
-        TreeNode a = x.new TreeNode(3);
-        TreeNode b = x.new TreeNode(1);
-        TreeNode c = x.new TreeNode(4);
-        TreeNode d = x.new TreeNode(2);
+        TreeNode a = new TreeNode(3);
+        TreeNode b = new TreeNode(1);
+        TreeNode c = new TreeNode(4);
+        TreeNode d = new TreeNode(2);
 //        TreeNode e = x.new TreeNode(5);
 //        TreeNode f = x.new TreeNode(6);
 //        TreeNode g = x.new TreeNode(7);
