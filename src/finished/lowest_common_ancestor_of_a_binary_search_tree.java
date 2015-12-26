@@ -1,4 +1,4 @@
-package un_finished;
+package finished;
 
 import util.TreeNode;
 
@@ -9,10 +9,13 @@ import java.util.ArrayList;
  */
 public class lowest_common_ancestor_of_a_binary_search_tree {
 
-    public static ArrayList<TreeNode> pathP = new ArrayList<>();
-    public static ArrayList<TreeNode> pathQ = new ArrayList<>();
+    public static ArrayList<TreeNode> pathP, pathQ;
+    //https://leetcode.com/faq/#different-output
 
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+        pathP = new ArrayList<>();
+        pathQ = new ArrayList<>();
 
         helper(root, p, pathP);
         helper(root, q, pathQ);
