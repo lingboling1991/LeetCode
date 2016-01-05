@@ -20,7 +20,7 @@ public class balanced_binary_tree {
         else if (Math.abs(helper(root.left) - helper(root.right)) > 1)
             return false;
         else
-            return isBalanced(root.left) && isBalanced(root.right);
+            return isBalanced(root.left) && isBalanced(root.right);// 题干着重标出了every node，所以要针对每个节点看一遍
     }
 
     public static void main(String[] args) {
