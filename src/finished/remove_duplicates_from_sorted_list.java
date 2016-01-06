@@ -1,21 +1,19 @@
 package finished;
 
-import util.LIstNode;
-
 import java.util.HashSet;
 
 /**
  * Created by Administrator on 2015/12/25.
  */
 public class remove_duplicates_from_sorted_list {
-    public LIstNode deleteDuplicates(LIstNode head) {
+    public ListNode deleteDuplicates(ListNode head) {
 
         if (head == null) {
             return head;
         }
 
-        LIstNode c = head;
-        LIstNode n = head.next;
+        ListNode c = head;
+        ListNode n = head.next;
         HashSet<Integer> hashSet = new HashSet<>();
         hashSet.add(c.val);
 

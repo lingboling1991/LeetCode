@@ -1,10 +1,8 @@
 package try_again;
 
-import util.LIstNode;
-
 public class merge_two_sorted_lists {
 
-    public static LIstNode mergeTwoLists(LIstNode l1, LIstNode l2) {
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
         if (l1 == null && l2 != null) {// 开始时要考虑清楚，有几种可能的输入情况
             return l2;
@@ -14,15 +12,15 @@ public class merge_two_sorted_lists {
             return null;
         }
 
-        LIstNode p1 = l1;
-        LIstNode p2 = l2;
+        ListNode p1 = l1;
+        ListNode p2 = l2;
 
         int newNodeValue = p1.val <= p2.val ? p1.val : p2.val;
-        LIstNode res = new LIstNode(newNodeValue);
-        LIstNode p = res;
+        ListNode res = new ListNode(newNodeValue);
+        ListNode p = res;
 
         if (p1.val == p2.val) {
-            LIstNode n = new LIstNode(p2.val);
+            ListNode n = new ListNode(p2.val);
             p.next = n;
             p = p.next;// 这里不要忙中出错，p是要在每次操作后都后移的
             p1 = p1.next;
@@ -37,18 +35,18 @@ public class merge_two_sorted_lists {
 
         while (p1 != null && p2 != null) {
             if (p1.val < p2.val) {
-                LIstNode n = new LIstNode(p1.val);
+                ListNode n = new ListNode(p1.val);
                 p.next = n;
                 p = p.next;
                 p1 = p1.next;
             } else if (p2.val < p1.val) {
-                LIstNode n = new LIstNode(p2.val);
+                ListNode n = new ListNode(p2.val);
                 p.next = n;
                 p = p.next;
                 p2 = p2.next;
             } else {
-                LIstNode n1 = new LIstNode(p1.val);
-                LIstNode n2 = new LIstNode(p2.val);
+                ListNode n1 = new ListNode(p1.val);
+                ListNode n2 = new ListNode(p2.val);
                 p.next = n1;
                 p = p.next;
                 p.next = n2;
@@ -68,11 +66,11 @@ public class merge_two_sorted_lists {
 
     public static void main(String arg[]) {
 
-        LIstNode a = new LIstNode(1);
-        LIstNode b = new LIstNode(3);
-        LIstNode c = new LIstNode(5);
-        LIstNode d = new LIstNode(1);
-        LIstNode e = new LIstNode(4);
+        ListNode a = new ListNode(1);
+        ListNode b = new ListNode(3);
+        ListNode c = new ListNode(5);
+        ListNode d = new ListNode(1);
+        ListNode e = new ListNode(4);
 
         a.next = null;
         b.next = c;

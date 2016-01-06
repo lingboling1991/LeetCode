@@ -1,19 +1,17 @@
 package finished;
 
-import util.LIstNode;
-
 import java.util.HashMap;
 
 public class intersection_of_two_linked_lists {
 
-    public static LIstNode getIntersectionNode(LIstNode headA, LIstNode headB) {
+    public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         if (headA == null || headB == null) {
             return null;
         }
 
-        HashMap<LIstNode, Integer> a = new HashMap<>();// 这里要设计好，因为p.next肯定不一样（因为不会成环），但p.val可能会一样，所以应当是ListNode作Key
-        LIstNode p = headA;
+        HashMap<ListNode, Integer> a = new HashMap<>();// 这里要设计好，因为p.next肯定不一样（因为不会成环），但p.val可能会一样，所以应当是ListNode作Key
+        ListNode p = headA;
 
         while (p.next != null) {
             a.put(p.next, p.val);
@@ -37,12 +35,12 @@ public class intersection_of_two_linked_lists {
     }
 
     public static void main(String arg[]) {
-        LIstNode a = new LIstNode(1);
-        LIstNode b = new LIstNode(2);
-        LIstNode c = new LIstNode(3);
-        LIstNode d = new LIstNode(4);
-        LIstNode e = new LIstNode(5);
-//         intersection_of_two_linked_lists.LIstNode f = s.new LIstNode(6);
+        ListNode a = new ListNode(1);
+        ListNode b = new ListNode(2);
+        ListNode c = new ListNode(3);
+        ListNode d = new ListNode(4);
+        ListNode e = new ListNode(5);
+//         intersection_of_two_linked_lists.ListNode f = s.new ListNode(6);
 
         a.next = null;
         b.next = c;

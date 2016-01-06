@@ -1,17 +1,15 @@
 package finished;
 
-import util.LIstNode;
-
 import java.util.ArrayList;
 
 public class remove_nth_node_from_end_of_list {
-    public static LIstNode removeNthFromEnd(LIstNode head, int n) {
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
 
         if (head.next == null)
             return null;
 
-        ArrayList<LIstNode> l = new ArrayList<>();
-        LIstNode p = head;
+        ArrayList<ListNode> l = new ArrayList<>();
+        ListNode p = head;
 
         while (p.next != null) {
             l.add(p);
