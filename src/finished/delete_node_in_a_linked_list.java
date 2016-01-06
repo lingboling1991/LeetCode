@@ -1,6 +1,6 @@
 package finished;
 
-import util.ListNode;
+import util.LIstNode;
 
 /**
  * Created by Administrator on 2015/12/17.
@@ -8,8 +8,8 @@ import util.ListNode;
 public class delete_node_in_a_linked_list {
 
 
-    public static void deleteNode(ListNode node) {
-        ListNode nn = node.next;
+    public static void deleteNode(LIstNode node) {
+        LIstNode nn = node.next;
 
         while (nn.next != null) {
             node.val = nn.val;
@@ -22,11 +22,11 @@ public class delete_node_in_a_linked_list {
 
 
     public static void main(String[] args) {
-        ListNode a = new ListNode(1);
-        ListNode b = new ListNode(2);
-        ListNode c = new ListNode(3);
-        ListNode d = new ListNode(4);
-        ListNode e = new ListNode(5);
+        LIstNode a = new LIstNode(1);
+        LIstNode b = new LIstNode(2);
+        LIstNode c = new LIstNode(3);
+        LIstNode d = new LIstNode(4);
+        LIstNode e = new LIstNode(5);
 
         a.next = b;
         b.next = c;

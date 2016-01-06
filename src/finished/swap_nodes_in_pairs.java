@@ -1,18 +1,18 @@
 package finished;
 
-import util.ListNode;
+import util.LIstNode;
 
 /**
  * Created by Administrator on 2015/12/17.
  */
 public class swap_nodes_in_pairs {
-    public ListNode swapPairs(ListNode head) {
+    public LIstNode swapPairs(LIstNode head) {
 
         if (head == null) {
             return null;//注意[]这种情况
         }
 
-        ListNode l = head, r = head.next, tmp;
+        LIstNode l = head, r = head.next, tmp;
 
         if (r != null) {
             head = r;

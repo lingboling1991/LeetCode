@@ -1,19 +1,19 @@
 package try_again;
 
-import util.ListNode;
+import util.LIstNode;
 import util.TreeNode;
 
 public class convert_sorted_list_to_binary_search_tree {
 
-    public static ListNode node;
+    public static LIstNode node;
 
-    public static TreeNode sortedListToBST(ListNode head) {
+    public static TreeNode sortedListToBST(LIstNode head) {
         if (head == null) {
             return null;
         }
 
         int size = 0;
-        ListNode runner = head;
+        LIstNode runner = head;
         node = head;
 
         while (runner != null) {
@@ -44,11 +44,11 @@ public class convert_sorted_list_to_binary_search_tree {
 
     public static void main(String[] args) {
 
-        ListNode a = new ListNode(1);
-        ListNode b = new ListNode(2);
-        ListNode c = new ListNode(3);
-        ListNode d = new ListNode(4);
-        ListNode e = new ListNode(5);
+        LIstNode a = new LIstNode(1);
+        LIstNode b = new LIstNode(2);
+        LIstNode c = new LIstNode(3);
+        LIstNode d = new LIstNode(4);
+        LIstNode e = new LIstNode(5);
 
         a.next = b;
         b.next = c;

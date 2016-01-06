@@ -3,11 +3,11 @@ package util;
 /**
  * Created by Administrator on 2015/12/25.
  */
-public class ListNode {
+public class LIstNode {
     public int val;
-    public ListNode next;
+    public LIstNode next;
 
-    public ListNode(int x) {
+    public LIstNode(int x) {
         val = x;
         next = null;
     }
