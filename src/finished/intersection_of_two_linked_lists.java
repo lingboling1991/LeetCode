@@ -1,5 +1,7 @@
 package finished;
 
+import util.ListNode;
+
 import java.util.HashMap;
 
 public class intersection_of_two_linked_lists {

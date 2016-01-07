@@ -1,5 +1,7 @@
 package finished;
 
+import util.ListNode;
+
 /**
  * Created by Administrator on 2015/12/17.
  */

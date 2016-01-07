@@ -1,5 +1,7 @@
 package try_again;
 
+import util.ListNode;
+
 public class merge_two_sorted_lists {
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
