@@ -2,28 +2,22 @@ package try_again.min_stack;
 
 public class MinStack {
 
-    int n = 0;
-    int[] m = new int[9999999];
-    int min = 0;// 这个是最小值所在的位置，不是最小值本身
+	//存一个当前的最小值
 
-    public void push(int x) {
-        m[n] = x;
-        if (x <= m[min]) {
-            min = n;
-        }
-        n++;
-    }
+	public void push(int x) {
 
-    public void pop() {
-        n--;
-    }
+	}
 
-    public int top() {
-        return m[n];
-    }
+	public void pop() {
 
-    public int getMin() {
-        return min;
-    }
+	}
+
+	public int top() {
+		return 1;
+	}
+
+	public int getMin() {
+		return 1;
+	}
 
 }
