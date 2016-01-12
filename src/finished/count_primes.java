@@ -1,4 +1,4 @@
-package util;
+package finished;
 
 public class count_primes {//这个方法超时了，下回再做
 
